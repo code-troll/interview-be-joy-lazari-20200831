@@ -14,5 +14,7 @@ module.exports = {
     apiKey: 'c808c3b5ad219bada7b3b3857e721b10',
 
     // See https://openweathermap.org/current#data
-    unit: process.env.WEATHER_UNIT || null
+    unit: process.env.WEATHER_UNIT || null,
+
+    randomWeather: process.env.WEATHER_RANDOM || false
 };
