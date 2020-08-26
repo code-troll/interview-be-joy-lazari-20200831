@@ -27,7 +27,7 @@ export class Client {
     }
 
     public async getCurrentById(id: string): Promise<CurrentWeatherResult> {
-        const response = await this.get(`/weather`, {Id: id});
+        const response = await this.get(`/weather`, {id: id});
 
         return response.data;
     }
