@@ -11,5 +11,8 @@ module.exports = {
     baseURL: 'https://api.openweathermap.org/data/2.5/',
 
     // this key sometimes expires, just change it: https://home.openweathermap.org/api_keys
-    apiKey: 'c808c3b5ad219bada7b3b3857e721b10'
+    apiKey: 'c808c3b5ad219bada7b3b3857e721b10',
+
+    // See https://openweathermap.org/current#data
+    unit: process.env.WEATHER_UNIT || null
 };

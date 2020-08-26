@@ -1,5 +1,7 @@
 import {AxiosInstance} from "axios";
 import {Coords, CurrentWeatherResult} from "./models";
+// @ts-ignore
+import {unit} from "config/openweathermap";
 
 /**
  * Uses the OpenWeatherMap API to bring current weather data.
@@ -7,11 +9,15 @@ import {Coords, CurrentWeatherResult} from "./models";
  * API endpoints: https://openweathermap.org/current
  */
 export class Client {
+
+    protected readonly units: string
+
     constructor(
         private readonly httpClient: AxiosInstance,
         private readonly baseUrl: string,
         private readonly apiKey: string
     ) {
+        this.units = unit || null
     }
 
     public async getCurrentByName(location: string): Promise<CurrentWeatherResult> {
@@ -45,6 +51,6 @@ export class Client {
     }
 
     private makeParams(params: object): object {
-        return {APPID: this.apiKey, ...params};
+        return {APPID: this.apiKey, units: this.units, ...params};
     }
 }
