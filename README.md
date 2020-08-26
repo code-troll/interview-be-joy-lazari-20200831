@@ -1,1 +1,1 @@
-# interview-be-joy-lazari-20200831
+# Go to the `./backend/` folder!
